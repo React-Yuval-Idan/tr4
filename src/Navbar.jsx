@@ -1,25 +1,30 @@
 import { NavLink } from 'react-router-dom'
 
 function Navbar() {
+
+  const activeStyle = ({ isActive }) => ({
+    color: isActive ? 'red' : 'black',
+  });
+  
   return (
     <div>
         <NavLink
             to="/"
-            style={({isActive})=>({color:isActive?'red':'black'})}
+            style={activeStyle}
             >
          דף הבית |  
         </NavLink>
 
         <NavLink 
             to="/about"
-            style={({isActive})=>({color:isActive?'red':'black'})}
+            style={activeStyle}
             >
             אודות האתר |
         </NavLink>
 
         <NavLink
             to="/characters"
-            style={({isActive})=>({color:isActive?'red':'black'})}
+            style={activeStyle}
             >
             דמויות
         </NavLink>
